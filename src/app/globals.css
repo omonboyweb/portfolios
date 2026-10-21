@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --stripe-light: #f6f9fc;
+  --stripe-dark: #0a2540;
+  --stripe-purple: #635bff;
+  --stripe-cyan: #00d4ff;
+  --stripe-blue: #0073e6;
+  --stripe-heading: #0a2540;
+  --stripe-body: #425466;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f6f9fc;
+  color: #425466;
+}
+
+body {
+  background-color: #f6f9fc;
+  color: #425466;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Balanced headings & orphan-free paragraphs (modern-web-guidance: improve-text-layout-and-legibility) */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Defer rendering heavy below-the-fold sections (modern-web-guidance: defer-rendering-heavy-content) */
+.deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 950px;
+}
+
+/* Post-interaction validation styles (modern-web-guidance: validate-input-after-interaction) */
+.stripe-input:user-invalid,
+.stripe-input.user-invalid-fallback {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.stripe-input:user-invalid + .field-error-msg,
+.stripe-input.user-invalid-fallback + .field-error-msg {
+  display: block;
+}
+
+.stripe-input:user-valid,
+.stripe-input.user-valid-fallback {
+  border-color: #16a34a;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f9fc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f6f9fc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
